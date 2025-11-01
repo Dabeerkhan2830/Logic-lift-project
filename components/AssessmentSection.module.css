@@ -1,0 +1,142 @@
+.assessmentSection {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border-radius: 28px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.05) inset;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: rgba(28, 28, 30, 0.7);
+  font-weight: 400;
+}
+
+.assessmentOptions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.levelOption {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  width: 200px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.levelOption:hover,
+.levelOption.selected {
+  transform: translateY(-4px);
+  border-color: rgba(0, 122, 255, 0.4);
+  box-shadow: 
+    0 8px 24px rgba(0, 122, 255, 0.15),
+    0 2px 0 rgba(255, 255, 255, 0.9) inset;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.levelOption h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #1C1C1E;
+  font-weight: 600;
+}
+
+.levelOption p {
+  color: rgba(28, 28, 30, 0.7);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.levelQuestions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.levelQuestions h3 {
+  color: #007AFF;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.levelQuestions ol {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #1C1C1E;
+  line-height: 1.8;
+}
+
+.levelQuestions li {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  color: rgba(28, 28, 30, 0.9);
+}
+
+.levelQuestions em {
+  color: rgba(28, 28, 30, 0.6);
+  font-style: normal;
+  display: block;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  font-weight: 400;
+}
+
+.actionButtons {
+  text-align: center;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.navBtn {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #007AFF;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding: 0.8rem 1.6rem;
+  border-radius: 20px;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.05),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 4px 12px rgba(0, 122, 255, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  transform: translateY(-1px);
+  color: #0051D5;
+}
+
+.languageTitle {
+  text-align: center;
+  margin: 2.5rem 0 1rem;
+  color: #007AFF;
+  font-weight: 600;
+}

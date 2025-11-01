@@ -1,0 +1,83 @@
+.header {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1C1C1E;
+  letter-spacing: -0.02em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.logo i {
+  font-size: 2rem;
+  color: #007AFF;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo:hover i {
+  transform: scale(1.1);
+}
+
+.userActions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #007AFF;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.05),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.btnSecondary:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+.userMenu {
+  display: flex;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
