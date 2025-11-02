@@ -8,6 +8,7 @@ import QuestionAnswer from './QuestionAnswer'
 import PracticeProblemsModal from './modals/PracticeProblemsModal'
 import IntermediateProblemsModal from './modals/IntermediateProblemsModal'
 import AdvancedProblemsModal from './modals/AdvancedProblemsModal'
+import NotesModal from './modals/NotesModal'
 
 const languages = ['Python', 'JavaScript', 'Java', 'C++', 'C#', 'Go']
 
@@ -64,6 +65,7 @@ export default function AssessmentSection() {
   const [showPracticeModal, setShowPracticeModal] = useState(false)
   const [showIntermediateModal, setShowIntermediateModal] = useState(false)
   const [showAdvancedModal, setShowAdvancedModal] = useState(false)
+  const [showNotesModal, setShowNotesModal] = useState(false)
 
   const handleLevelSelection = (level: string) => {
     setSelectedLevel(level)
@@ -257,7 +259,11 @@ export default function AssessmentSection() {
         )}
 
         <div className={styles.actionButtons}>
-          <button className={`btn ${styles.navBtn}`} type="button">
+          <button 
+            className={`btn ${styles.navBtn}`} 
+            type="button"
+            onClick={() => setShowNotesModal(true)}
+          >
             Notes
           </button>
           <button 
@@ -316,6 +322,10 @@ export default function AssessmentSection() {
 
       {showAdvancedModal && (
         <AdvancedProblemsModal onClose={() => setShowAdvancedModal(false)} />
+      )}
+
+      {showNotesModal && (
+        <NotesModal onClose={() => setShowNotesModal(false)} />
       )}
     </>
   )
