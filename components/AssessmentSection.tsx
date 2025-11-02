@@ -202,6 +202,60 @@ export default function AssessmentSection() {
           </div>
         )}
 
+        {selectedLevel === 'Advanced' && (
+          <div className={styles.levelQuestions}>
+            <h3>Advanced Questions</h3>
+            <ol>
+              <li>
+                What is the time complexity of Kadane's Algorithm for finding maximum subarray sum?
+                <br />
+                <em>a) O(n²) b) O(n log n) c) O(n) d) O(1)</em>
+                <QuestionAnswer question="What is the time complexity of Kadane's Algorithm for finding maximum subarray sum? Explain how the algorithm works." questionNumber={1} />
+              </li>
+              <li>
+                Which algorithm is most efficient for finding the majority element in an array?
+                <br />
+                <em>a) Sorting approach b) Boyer-Moore Voting Algorithm c) Hash map d) Brute force</em>
+                <QuestionAnswer question="Which algorithm is most efficient for finding the majority element in an array? Explain the Boyer-Moore Voting Algorithm." questionNumber={2} />
+              </li>
+              <li>
+                What is the optimal approach to find the longest substring without repeating characters?
+                <br />
+                <em>a) Brute force O(n³) b) Sliding window with hash map O(n) c) Two nested loops O(n²) d) Recursive approach</em>
+                <QuestionAnswer question="What is the optimal approach to find the longest substring without repeating characters? Explain the sliding window technique." questionNumber={3} />
+              </li>
+              <li>
+                What data structure is essential for checking valid parentheses sequences?
+                <br />
+                <em>a) Queue b) Stack c) Array d) Hash map</em>
+                <QuestionAnswer question="What data structure is essential for checking valid parentheses sequences? Explain how to use it for this problem." questionNumber={4} />
+              </li>
+              <li>
+                What is the best time complexity for matrix multiplication of two n×n matrices?
+                <br />
+                <em>a) O(n²) b) O(n³) c) O(n log n) d) O(n⁴)</em>
+                <QuestionAnswer question="What is the best time complexity for matrix multiplication of two n×n matrices? Explain the standard algorithm and any optimization techniques." questionNumber={5} />
+              </li>
+              <li>
+                How would you efficiently rotate an array by K positions?
+                <QuestionAnswer question="How would you efficiently rotate an array by K positions? Explain different approaches and their time/space complexities." questionNumber={6} />
+              </li>
+              <li>
+                Explain the two-pointer technique and when to use it.
+                <QuestionAnswer question="Explain the two-pointer technique and when to use it. Provide examples of problems that benefit from this approach." questionNumber={7} />
+              </li>
+              <li>
+                What are the different approaches to generate all permutations of a string?
+                <QuestionAnswer question="What are the different approaches to generate all permutations of a string? Compare recursive backtracking with iterative methods." questionNumber={8} />
+              </li>
+              <li>
+                How do you traverse a binary search tree in different orders?
+                <QuestionAnswer question="How do you traverse a binary search tree in different orders? Explain inorder, preorder, and postorder traversals with their use cases." questionNumber={9} />
+              </li>
+            </ol>
+          </div>
+        )}
+
         <div className={styles.actionButtons}>
           <button className={`btn ${styles.navBtn}`} type="button">
             Notes
