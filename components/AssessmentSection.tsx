@@ -5,6 +5,9 @@ import styles from './AssessmentSection.module.css'
 import LanguageSelection from './LanguageSelection'
 import RoadmapOverlay from './RoadmapOverlay'
 import QuestionAnswer from './QuestionAnswer'
+import PracticeProblemsModal from './modals/PracticeProblemsModal'
+import IntermediateProblemsModal from './modals/IntermediateProblemsModal'
+import AdvancedProblemsModal from './modals/AdvancedProblemsModal'
 
 const languages = ['Python', 'JavaScript', 'Java', 'C++', 'C#', 'Go']
 
@@ -58,6 +61,9 @@ export default function AssessmentSection() {
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null)
   const [showRoadmap, setShowRoadmap] = useState(false)
   const [roadmapLanguage, setRoadmapLanguage] = useState<string>('')
+  const [showPracticeModal, setShowPracticeModal] = useState(false)
+  const [showIntermediateModal, setShowIntermediateModal] = useState(false)
+  const [showAdvancedModal, setShowAdvancedModal] = useState(false)
 
   const handleLevelSelection = (level: string) => {
     setSelectedLevel(level)
@@ -200,16 +206,28 @@ export default function AssessmentSection() {
           <button className={`btn ${styles.navBtn}`} type="button">
             Notes
           </button>
-          <button className={`btn ${styles.navBtn}`} type="button">
+          <button 
+            className={`btn ${styles.navBtn}`} 
+            type="button"
+            onClick={() => setShowPracticeModal(true)}
+          >
             Practice Questions
           </button>
           <button className={`btn ${styles.navBtn}`} type="button">
             Revision
           </button>
-          <button className={`btn ${styles.navBtn}`} type="button">
+          <button 
+            className={`btn ${styles.navBtn}`} 
+            type="button"
+            onClick={() => setShowIntermediateModal(true)}
+          >
             Intermediate
           </button>
-          <button className={`btn ${styles.navBtn}`} type="button">
+          <button 
+            className={`btn ${styles.navBtn}`} 
+            type="button"
+            onClick={() => setShowAdvancedModal(true)}
+          >
             Advanced
           </button>
           <button className={`btn ${styles.navBtn}`} type="button">
@@ -232,6 +250,18 @@ export default function AssessmentSection() {
           language={roadmapLanguage}
           onClose={() => setShowRoadmap(false)}
         />
+      )}
+
+      {showPracticeModal && (
+        <PracticeProblemsModal onClose={() => setShowPracticeModal(false)} />
+      )}
+
+      {showIntermediateModal && (
+        <IntermediateProblemsModal onClose={() => setShowIntermediateModal(false)} />
+      )}
+
+      {showAdvancedModal && (
+        <AdvancedProblemsModal onClose={() => setShowAdvancedModal(false)} />
       )}
     </>
   )

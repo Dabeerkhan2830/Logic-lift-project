@@ -1,0 +1,63 @@
+#
+Problem
+Hint / Guidance
+1.
+Print the first N natural numbers
+Use a loop (for or while).
+2.
+Sum of first N natural numbers
+Use a loop or the formula n*(n+1)/2.
+3.
+Check if a number is even or odd
+Use modulus % operator.
+4.
+Find factorial of a number
+Use loop or recursion (n! = n * (n-1)!).
+5.
+Reverse a number
+Use % to get digits and / to remove last digit.
+6.
+Check if a number is palindrome
+Reverse it and compare with original.
+7.
+Find the largest of three numbers
+Use if-else or max() (language specific).
+8.
+Check if a number is prime
+Test divisibility up to √n.
+9.
+Generate Fibonacci series up to N terms
+Use two variables to track previous terms.
+10.
+Count digits in a number
+Divide by 10 until number becomes 0.
+11.
+Find sum of digits of a number
+Extract digits using %10 and /10.
+12.
+Find the GCD (HCF) of two numbers
+Use Euclidean algorithm.
+13.
+Check if a string is palindrome
+Compare first and last characters using indexes or slicing.
+14.
+Count vowels and consonants in a string
+Use loops and check with vowel set {'a','e','i','o','u'}.
+15.
+Find the largest element in an array
+Traverse the array keeping track of max value.
+16.
+Find the second largest element in an array
+Keep two variables: max1 and max2.
+17.
+Sort an array
+Implement bubble sort or use built-in sort.
+18.
+Find sum of elements in an array
+Use a loop or built-in sum function.
+19.
+Count frequency of each element in an array/string
+Use dictionary/map or nested loops.
+20.
+Swap two numbers without using a third variable
+Use arithmetic (a=a+b; b=a-b; a=a-b;) or XOR.

@@ -1,0 +1,60 @@
+1.
+Find the Missing Number in an Array (1 to N)
+Use the formula n*(n+1)/2 - sum(array).
+2.
+Find Duplicate Elements in an Array
+Use a frequency array, hash map, or nested loops.
+3.
+Find the Intersection of Two Arrays
+Compare each element or use sets/maps.
+4.
+Move All Zeros to the End of an Array
+Use two-pointer technique or extra list.
+5.
+Rotate an Array by K Positions
+Use slicing, reversal algorithm, or temporary array.
+6.
+Check if Two Strings Are Anagrams
+Sort both strings or compare character counts.
+7.
+Find the Longest Substring Without Repeating Characters
+Use sliding window and hash map.
+8.
+Count Frequency of Words in a Sentence
+Split string and use dictionary/map.
+9.
+Implement Binary Search
+Use divide and conquer (mid element logic).
+10.
+Implement Linear Search Recursively
+Replace loop with recursive call until index == size.
+11.
+Reverse a String Without Using Built-in Functions
+Use loop swapping characters or recursion.
+12.
+Check if a Number is an Armstrong Number
+Sum of digits raised to power of digit count == original number.
+13.
+Find the Majority Element in an Array (occurs > n/2 times)
+Use Boyer-Moore Voting Algorithm or hash map.
+14.
+Implement Matrix Multiplication
+Use nested loops with formula C[i][j] += A[i][k]*B[k][j].
+15.
+Find the Transpose of a Matrix
+Swap rows and columns.
+16.
+Find the Maximum Subarray Sum
+Use Kadane’s Algorithm.
+17.
+Find the Kth Largest/Smallest Element in an Array
+Sort array or use heap/selection algorithm.
+18.
+Check if a String is a Valid Parentheses Sequence
+Use stack (( pushes, ) pops).
+19.
+Generate All Permutations of a String
+Use recursion and swapping technique.
+20.
+Implement a Recursive Binary Search Tree Traversal (Inorder/Preorder/Postorder)
+Use recursion to visit nodes in correct order.

@@ -1,0 +1,63 @@
+#
+Problem
+Hint / Guidance
+1.
+Find all prime numbers in a given range
+Use a loop and the prime check logic for each number.
+2.
+Find the missing number in an array (1 to N)
+Use sum formula or XOR logic.
+3.
+Find the duplicate element in an array
+Use nested loops or a hash map to track seen elements.
+4.
+Check if two strings are anagrams
+Sort both strings or count character frequencies.
+5.
+Remove all duplicates from an array/string
+Use an auxiliary array or set.
+6.
+Find the first non-repeating character in a string
+Count occurrences using a map or array of frequency.
+7.
+Check if a number is an Armstrong number
+Sum of digits raised to power of number of digits equals number.
+8.
+Print all factors of a number
+Loop from 1 to √n and print divisors.
+9.
+Find the intersection and union of two arrays
+Use loops or sets to track common and unique elements.
+10.
+Reverse the words in a sentence
+Split by spaces and reverse the list of words.
+11.
+Find the longest word in a string
+Split string and compare lengths of each word.
+12.
+Check if a string is a valid palindrome ignoring spaces & case
+Remove spaces, convert to lower, then compare.
+13.
+Implement binary search
+Divide array by mid index; move left/right accordingly.
+14.
+Implement bubble sort / insertion sort manually
+Understand swapping adjacent or inserting in order.
+15.
+Find the maximum sum of a contiguous subarray (Kadane’s Algorithm)
+Track current sum and global max while traversing.
+16.
+Count the number of words in a sentence
+Increment count whenever a space follows a word.
+17.
+Find frequency of digits in a number
+Convert to string or use %10 repeatedly.
+18.
+Print half pyramid or diamond pattern using * symbols
+Use nested loops for rows and columns.
+19.
+Calculate power of a number (aⁿ) without using pow()
+Use loop or recursion.
+20.
+Check if an array is sorted (ascending or descending)
+Compare each element with the next.
