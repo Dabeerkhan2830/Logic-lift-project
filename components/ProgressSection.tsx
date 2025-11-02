@@ -14,6 +14,8 @@ export default function ProgressSection() {
   const circlesRef = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
+    const intervals: NodeJS.Timeout[] = []
+    
     circlesRef.current.forEach((circle, index) => {
       if (!circle) return
       const stat = progressStats[index]
@@ -31,8 +33,12 @@ export default function ProgressSection() {
           valueSpan.textContent = stat.suffix === '%' ? `${progress}%` : progress.toString()
         }
       }, 20)
-      return () => clearInterval(interval)
+      intervals.push(interval)
     })
+    
+    return () => {
+      intervals.forEach(interval => clearInterval(interval))
+    }
   }, [])
 
   return (
@@ -47,7 +53,9 @@ export default function ProgressSection() {
         {progressStats.map((stat, index) => (
           <div key={index} className={styles.stat}>
             <div
-              ref={(el) => (circlesRef.current[index] = el)}
+              ref={(el) => {
+                circlesRef.current[index] = el
+              }}
               className={styles.circularProgress}
               data-progress={stat.value}
             >
