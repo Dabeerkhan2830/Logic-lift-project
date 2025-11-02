@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Advanced IQ Test Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --success: #10b981;
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-darker);
+            color: var(--text-primary);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            padding: 2rem 1rem;
+            cursor: default;
+        }
+        /* Animated Gradient Background */
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient( 135deg, var(--bg-darker) 0%, var(--bg-dark) 25%, #1e1b4b 50%, var(--bg-dark) 75%, var(--bg-darker) 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+        }
+        
+        @keyframes gradientShift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        /* Floating Particles Background */
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+            animation: floatParticles 20s ease-in-out infinite;
+            z-index: -1;
+        }
+        
+        @keyframes floatParticles {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+            66% {
+                transform: translate(-30px, 30px) scale(0.9);
+            }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        /* Header with Glassmorphism */
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 3s ease infinite;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        @keyframes gradientText {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+        /* Progress Bar */
+        
+        .progress-container {
+            margin-bottom: 2rem;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            background-size: 200% 100%;
+            border-radius: 100px;
+            width: 0%;
+            transition: width 0.5s ease;
+            animation: progressGradient 2s ease infinite;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+        
+        @keyframes progressGradient {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        /* Form Container */
+        
+        #iq-form {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Question Cards */
+        
+        .question {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .question::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .question:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(8px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.1);
+        }
+        
+        .question:hover::before {
+            opacity: 1;
+        }
+        
+        .question p {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .question-number {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-right: 0.75rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+        /* Answer Options */
+        
+        .answers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .answers label {
+            display: flex;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .answers label:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+            color: var(--text-primary);
+        }
+        
+        .answers input[type="radio"] {
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+            cursor: pointer;
+            accent-color: var(--primary);
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .answers input[type="radio"]:checked+span,
+        .answers input[type="radio"]:checked~span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .answers label:has(input[type="radio"]:checked) {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+            color: var(--text-primary);
+        }
+        
+        .answers label span {
+            flex: 1;
+        }
+        /* Submit Button */
+        
+        #submit-btn {
+            width: 100%;
+            padding: 1.25rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        #submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        
+        #submit-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        #submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        }
+        
+        #submit-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        #submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        /* Result Display */
+        
+        #result {
+            margin-top: 2rem;
+            padding: 2.5rem;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            animation: slideUp 1s ease-out;
+            display: none;
+        }
+        
+        #result.show {
+            display: block;
+        }
+        
+        #result h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--success), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        #result .score {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--success);
+            margin: 1rem 0;
+        }
+        
+        #result .message {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .header {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            #iq-form {
+                padding: 1.5rem;
+            }
+            .question {
+                padding: 1.5rem;
+            }
+            .question p {
+                font-size: 1.1rem;
+            }
+            .answers {
+                grid-template-columns: 1fr;
+            }
+            .answers label {
+                padding: 1rem;
+            }
+        }
+        /* Loading Animation */
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .loading {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        /* Success Animation */
+        
+        @keyframes successPop {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .success-animation {
+            animation: successPop 0.5s ease-out;
+        }
+        /* Registration/Login Section */
+        
+        .auth-section {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        .auth-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 1rem;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .auth-tab::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        
+        .auth-tab.active {
+            color: var(--text-primary);
+        }
+        
+        .auth-tab.active::after {
+            width: 100%;
+        }
+        
+        .auth-tab:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .auth-form {
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+        }
+        
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .auth-submit-btn {
+            width: 100%;
+            padding: 1.25rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+        
+        .auth-submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        }
+        
+        .auth-submit-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .auth-submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        /* Success Popup Modal */
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .modal-overlay.show {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: var(--shadow);
+            animation: successPop 0.5s ease-out;
+            position: relative;
+        }
+        
+        .modal-content .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: successIcon 0.6s ease-out;
+        }
+        
+        @keyframes successIcon {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .modal-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--success), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .modal-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .modal-close-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #fbbf24 0%, #6366f1 50%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4), 0 0 30px rgba(139, 92, 246, 0.3);
+        }
+        
+        .modal-close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(99, 102, 241, 0.5), 0 0 40px rgba(139, 92, 246, 0.4), inset 0 0 15px rgba(251, 191, 36, 0.2);
+        }
+    </style>
+    <script>
+        // Enhanced JavaScript with progress tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('iq-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const resultDiv = document.getElementById('result');
+            const questions = document.querySelectorAll('.question');
+
+            // Create progress bar
+            const progressContainer = document.createElement('div');
+            progressContainer.className = 'progress-container';
+            progressContainer.innerHTML = '<div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>';
+            form.insertBefore(progressContainer, form.firstChild);
+
+            const progressFill = document.getElementById('progress-fill');
+            const totalQuestions = questions.length;
+
+            // Update progress on answer selection
+            function updateProgress() {
+                const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+                const percentage = (answered / totalQuestions) * 100;
+                progressFill.style.width = percentage + '%';
+
+                // Enable submit button when all questions are answered
+                submitBtn.disabled = answered < totalQuestions;
+            }
+
+            // Add event listeners to all radio buttons
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.addEventListener('change', updateProgress);
+
+                // Add smooth selection animation
+                radio.addEventListener('change', function() {
+                    const label = this.closest('label');
+                    label.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        label.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // Initial state
+            updateProgress();
+
+            // Form submission
+            submitBtn.addEventListener('click', function() {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Processing...';
+                submitBtn.classList.add('loading');
+
+                // Simulate processing delay
+                setTimeout(() => {
+                    calculateResults();
+                }, 800);
+            });
+
+            function calculateResults() {
+                const formData = new FormData(form);
+                let score = 0;
+                let total = totalQuestions;
+
+                // Correct answers (you can modify these)
+                const correctAnswers = {
+                    'q1': '32',
+                    'q2': 'Snake',
+                    'q3': 'J'
+                };
+
+                // Calculate score
+                for (const [question, answer] of Object.entries(correctAnswers)) {
+                    if (formData.get(question) === answer) {
+                        score++;
+                    }
+                }
+
+                // Display results
+                const percentage = Math.round((score / total) * 100);
+                let message = '';
+                let emoji = '';
+
+                if (percentage >= 90) {
+                    message = 'Outstanding! You have exceptional intelligence!';
+                    emoji = '🌟';
+                } else if (percentage >= 70) {
+                    message = 'Great job! You scored above average.';
+                    emoji = '👍';
+                } else if (percentage >= 50) {
+                    message = 'Good effort! Keep practicing to improve.';
+                    emoji = '💪';
+                } else {
+                    message = 'Keep trying! Practice makes perfect.';
+                    emoji = '📚';
+                }
+
+                resultDiv.innerHTML = `
+                    <h2>${emoji} Test Complete!</h2>
+                    <div class="score">${score}/${total}</div>
+                    <div class="message">${message}</div>
+                    <p style="margin-top: 1.5rem; color: var(--text-secondary);">Score: ${percentage}%</p>
+                `;
+
+                resultDiv.classList.add('show', 'success-animation');
+                submitBtn.textContent = 'Submit';
+                submitBtn.classList.remove('loading');
+
+                // Scroll to results
+                resultDiv.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest'
+                });
+            }
+
+            // Add question numbers dynamically
+            questions.forEach((question, index) => {
+                const p = question.querySelector('p');
+                const questionText = p.textContent;
+                p.innerHTML = < span class = "question-number" > Q$ {
+                    index + 1
+                } < /span>${questionText};
+            });
+
+            // Wrap radio button text in span for better styling
+            document.querySelectorAll('.answers label').forEach(label => {
+                const text = label.childNodes[label.childNodes.length - 1];
+                if (text && text.nodeType === 3) {
+                    const span = document.createElement('span');
+                    span.textContent = text.textContent.trim();
+                    label.replaceChild(span, text);
+                }
+            });
+        });
+
+        // Registration/Login Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const registerTab = document.getElementById('register-tab');
+            const loginTab = document.getElementById('login-tab');
+            const registerForm = document.getElementById('register-form');
+            const loginForm = document.getElementById('login-form');
+            const registerSubmitBtn = document.getElementById('register-submit');
+            const loginSubmitBtn = document.getElementById('login-submit');
+            const modalOverlay = document.getElementById('success-modal');
+            const modalCloseBtn = document.getElementById('modal-close');
+
+            // Tab switching
+            registerTab.addEventListener('click', function() {
+                registerTab.classList.add('active');
+                loginTab.classList.remove('active');
+                registerForm.classList.add('active');
+                loginForm.classList.remove('active');
+            });
+
+            loginTab.addEventListener('click', function() {
+                loginTab.classList.add('active');
+                registerTab.classList.remove('active');
+                loginForm.classList.add('active');
+                registerForm.classList.remove('active');
+            });
+
+            // Form validation and submission
+            function validateForm(form) {
+                const inputs = form.querySelectorAll('input[required]');
+                let isValid = true;
+
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.style.borderColor = 'rgba(236, 72, 153, 0.5)';
+                        setTimeout(() => {
+                            input.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                        }, 2000);
+                    } else {
+                        input.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+                        setTimeout(() => {
+                            input.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                        }, 1000);
+                    }
+                });
+
+                return isValid;
+            }
+
+            // Register form submission
+            registerSubmitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                if (validateForm(registerForm)) {
+                    registerSubmitBtn.disabled = true;
+                    registerSubmitBtn.textContent = 'Registering...';
+
+                    // Simulate registration process
+                    setTimeout(() => {
+                        showSuccessModal();
+                        registerForm.reset();
+                        registerSubmitBtn.disabled = false;
+                        registerSubmitBtn.textContent = 'Sign Up';
+                    }, 800);
+                } else {
+                    // Show error message
+                    alert('Please fill in all fields');
+                }
+            });
+
+            // Login form submission
+            loginSubmitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                if (validateForm(loginForm)) {
+                    loginSubmitBtn.disabled = true;
+                    loginSubmitBtn.textContent = 'Logging in...';
+
+                    // Simulate login process
+                    setTimeout(() => {
+                        showSuccessModal('Login Successful!');
+                        loginForm.reset();
+                        loginSubmitBtn.disabled = false;
+                        loginSubmitBtn.textContent = 'Login';
+                    }, 800);
+                } else {
+                    alert('Please fill in all fields');
+                }
+            });
+
+            // Show success modal
+            function showSuccessModal(message = 'Successfully Registered!') {
+                const modalMessage = document.getElementById('modal-message');
+                if (modalMessage) {
+                    modalMessage.textContent = message;
+                }
+                modalOverlay.classList.add('show');
+            }
+
+            // Close modal
+            modalCloseBtn.addEventListener('click', function() {
+                modalOverlay.classList.remove('show');
+            });
+
+            // Close modal on overlay click
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) {
+                    modalOverlay.classList.remove('show');
+                }
+            });
+
+            // Email validation
+            const emailInputs = document.querySelectorAll('input[type="email"]');
+            emailInputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    const email = this.value.trim();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                    if (email && !emailRegex.test(email)) {
+                        this.style.borderColor = 'rgba(236, 72, 153, 0.5)';
+                        setTimeout(() => {
+                            this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                        }, 2000);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>IQ Test Challenge</h1>
+            <p>Test your intelligence with our advanced cognitive assessment</p>
+        </div>
+
+        <!-- Registration/Login Section -->
+        <div class="auth-section">
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="register-tab">Sign Up</button>
+                <button class="auth-tab" id="login-tab">Login</button>
+            </div>
+
+            <!-- Registration Form -->
+            <form class="auth-form active" id="register-form">
+                <div class="form-group">
+                    <label for="reg-name">Full Name</label>
+                    <input type="text" id="reg-name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email ID</label>
+                    <input type="email" id="reg-email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" name="password" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="auth-submit-btn" id="register-submit">Sign Up</button>
+            </form>
+
+            <!-- Login Form -->
+            <form class="auth-form" id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email ID</label>
+                    <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="auth-submit-btn" id="login-submit">Login</button>
+            </form>
+        </div>
+
+        <form id="iq-form">
+            <div class="question">
+                <p>What number comes next in the sequence? 2, 4, 8, 16, ?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q1" value="16" /><span>16</span></label>
+                    <label><input type="radio" name="q1" value="18" /><span>18</span></label>
+                    <label><input type="radio" name="q1" value="32" /><span>32</span></label>
+                    <label><input type="radio" name="q1" value="24" /><span>24</span></label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>Which one of the five is least like the other four?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q2" value="Dog" /><span>Dog</span></label>
+                    <label><input type="radio" name="q2" value="Mouse" /><span>Mouse</span></label>
+                    <label><input type="radio" name="q2" value="Lion" /><span>Lion</span></label>
+                    <label><input type="radio" name="q2" value="Snake" /><span>Snake</span></label>
+                    <label><input type="radio" name="q2" value="Elephant" /><span>Elephant</span></label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>What is the missing letter in the sequence? J, F, M, A, M, ?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q3" value="J" /><span>J</span></label>
+                    <label><input type="radio" name="q3" value="M" /><span>M</span></label>
+                    <label><input type="radio" name="q3" value="A" /><span>A</span></label>
+                    <label><input type="radio" name="q3" value="F" /><span>F</span></label>
+                </div>
+            </div>
+
+            <button type="button" id="submit-btn" disabled>Submit Answers</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content">
+            <div class="success-icon">✅</div>
+            <h3>Success!</h3>
+            <p id="modal-message">Successfully Registered!</p>
+            <button class="modal-close-btn" id="modal-close">Close</button>
+        </div>
+    </div>
+</body>
+
+</html>

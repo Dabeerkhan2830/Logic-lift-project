@@ -76,11 +76,12 @@ export default function SpaceBackground() {
         nebula.y,
         nebula.radius
       )
-      // Use purple, cyan, and pink colors for nebulas
+      // Enhanced purple theme colors for nebulas
       const colors = [
-        [138, 43, 226], // Purple
-        [0, 212, 255],  // Cyan
-        [255, 20, 147], // Pink
+        [147, 51, 234], // Primary Purple
+        [168, 85, 247], // Light Purple
+        [216, 112, 147], // Pink
+        [124, 58, 237], // Dark Purple
       ]
       const colorIndex = nebulas.indexOf(nebula) % colors.length
       const [r, g, b] = colors[colorIndex]
@@ -173,12 +174,13 @@ export default function SpaceBackground() {
         if (px >= -50 && px <= canvas.width + 50 && py >= -50 && py <= canvas.height + 50) {
           const size = (1 - s.z / canvas.width) * 3
           
-          // Create star glow
+          // Create star glow with purple theme
           const gradient = ctx.createRadialGradient(px, py, 0, px, py, size * 4)
           const colors = [
-            { r: 0, g: 255, b: 255 }, // Cyan
-            { r: 255, g: 100, b: 255 }, // Magenta
-            { r: 100, g: 200, b: 255 }, // Blue
+            { r: 147, g: 51, b: 234 }, // Primary Purple
+            { r: 168, g: 85, b: 247 }, // Light Purple
+            { r: 216, g: 112, b: 147 }, // Pink
+            { r: 124, g: 58, b: 237 }, // Dark Purple
           ]
           const color = colors[Math.floor(Math.random() * colors.length)]
           

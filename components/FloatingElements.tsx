@@ -14,7 +14,7 @@ export default function FloatingElements() {
           top: '10%',
           left: '5%',
           animationDuration: '25s',
-          background: 'radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent 70%)',
+          background: 'radial-gradient(circle, rgba(147, 51, 234, 0.4), transparent 70%)',
         }}
       />
       <div
@@ -25,7 +25,7 @@ export default function FloatingElements() {
           top: '60%',
           left: '80%',
           animationDuration: '30s',
-          background: 'radial-gradient(circle, rgba(0, 212, 255, 0.25), transparent 70%)',
+          background: 'radial-gradient(circle, rgba(168, 85, 247, 0.35), transparent 70%)',
         }}
       />
       <div
@@ -36,7 +36,7 @@ export default function FloatingElements() {
           top: '80%',
           left: '10%',
           animationDuration: '22s',
-          background: 'radial-gradient(circle, rgba(255, 20, 147, 0.2), transparent 70%)',
+          background: 'radial-gradient(circle, rgba(216, 112, 147, 0.3), transparent 70%)',
         }}
       />
       <div
@@ -47,7 +47,7 @@ export default function FloatingElements() {
           top: '30%',
           left: '70%',
           animationDuration: '28s',
-          background: 'radial-gradient(circle, rgba(142, 84, 233, 0.3), transparent 70%)',
+          background: 'radial-gradient(circle, rgba(147, 51, 234, 0.35), transparent 70%)',
         }}
       />
       

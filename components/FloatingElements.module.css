@@ -21,12 +21,26 @@
 .planet {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(138, 43, 226, 0.4), rgba(0, 212, 255, 0.2));
-  animation: float 18s infinite ease-in-out;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), rgba(147, 51, 234, 0.5), rgba(168, 85, 247, 0.3));
+  animation: float 18s infinite ease-in-out, pulseGlow 4s ease-in-out infinite;
   box-shadow: 
-    0 0 20px rgba(138, 43, 226, 0.5),
+    0 0 30px rgba(147, 51, 234, 0.6),
+    0 0 60px rgba(216, 112, 147, 0.3),
     inset -20px -20px 40px rgba(0, 0, 0, 0.5);
-  filter: blur(1px);
+  filter: blur(0.5px);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 30px rgba(147, 51, 234, 0.6),
+      0 0 60px rgba(216, 112, 147, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 50px rgba(147, 51, 234, 0.8),
+      0 0 80px rgba(216, 112, 147, 0.5);
+  }
 }
 
 .planet::before {
